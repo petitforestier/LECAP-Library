@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38E9E476-647E-4A43-9D61-10FBBE1CB2AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Library.Tools</RootNamespace>
+    <AssemblyName>Library.Tools</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>6affcd25</NuGetPackageImportStamp>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QasCloud|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\QasCloud\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\QasCloud\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QasLocal|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\QasLocal\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\QasLocal\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PublicKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 32bits|AnyCPU'">
+    <OutputPath>bin\Release 32bits\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\Release 32bits\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\x86\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\x86\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QasCloud|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\QasCloud\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\x86\QasCloud\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QasLocal|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\QasLocal\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\x86\QasLocal\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 32bits|x86'">
+    <OutputPath>bin\x86\Release 32bits\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <IntermediateOutputPath>C:\Users\ARNAUD~1.MON\AppData\Local\Temp\vs3D4.tmp\x86\Release 32bits\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>iTextSharpUtil\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects">
+      <HintPath>..\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>.\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\Attributes.cs" />
+    <Compile Include="Bitmap\ImageToPictureDispConverter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bitmap\WindowsThumbnailProvider.cs" />
+    <Compile Include="Comparator\ListComparator.cs" />
+    <Compile Include="Comparator\ObjectComparator.cs" />
+    <Compile Include="Culture\Debug\Debug.cs" />
+    <Compile Include="Culture\Debug\Logger.cs" />
+    <Compile Include="DynamicXml\DynamicXml.cs" />
+    <Compile Include="Enums\DebugModeEnum.cs" />
+    <Compile Include="Enums\GranularityEnum.cs" />
+    <Compile Include="Enums\StatusEnum.cs" />
+    <Compile Include="Enums\ValidationStatusEnum.cs" />
+    <Compile Include="Exceptions\frmExceptionMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exceptions\frmExceptionMessage.Designer.cs">
+      <DependentUpon>frmExceptionMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\Bytes.cs" />
+    <Compile Include="Extensions\Color.cs" />
+    <Compile Include="Extensions\Decimal.cs" />
+    <Compile Include="IO\Directory.cs" />
+    <Compile Include="IO\File.cs" />
+    <Compile Include="IO\IconManager.cs" />
+    <Compile Include="iTextSharpUtil\iTextSharpUtil.cs" />
+    <Compile Include="Misc\DesignMode.cs" />
+    <Compile Include="Misc\HotKeyManager.cs" />
+    <Compile Include="Misc\ReplacePointByComa.cs" />
+    <Compile Include="Object\KeyValue.cs" />
+    <Compile Include="Tasks\NotifierProgress.cs" />
+    <Compile Include="Enums\PositionEnum.cs" />
+    <Compile Include="Enums\SexEnum.cs" />
+    <Compile Include="Extensions\ControlCollection.cs" />
+    <Compile Include="Extensions\Path.cs" />
+    <Compile Include="Extensions\TimeSpan.cs" />
+    <Compile Include="Extensions\Image.cs" />
+    <Compile Include="Extensions\TreeNode.cs" />
+    <Compile Include="Culture\LangHelper.cs" />
+    <Compile Include="Misc\BoolLock.cs" />
+    <Compile Include="Misc\BoolLocker.cs" />
+    <Compile Include="Network\NetworkAdapter.cs" />
+    <Compile Include="Network\NetworkHelper.cs" />
+    <Compile Include="Network\WMIOperation.cs" />
+    <Compile Include="Tasks\Cancellable.cs" />
+    <Compile Include="Tasks\ProgressCancelReporter.cs" />
+    <Compile Include="Tasks\ProgressCancelNotifier.cs" />
+    <Compile Include="Time\MyTime.cs" />
+    <Compile Include="Type\IsNullable.cs" />
+    <Compile Include="WCFRetry\WCFRetryHelper.cs" />
+    <Compile Include="Session\WCF\ClientMessageBehaviorExtension.cs" />
+    <Compile Include="Session\WCF\ClientMessageBehavior.cs" />
+    <Compile Include="Session\WCF\ClientMessageInspector.cs" />
+    <Compile Include="Session\WCF\ServiceMessageInspectorBehavior.cs" />
+    <Compile Include="Session\WCF\ServiceMessageInspector.cs" />
+    <Compile Include="Session\Session.cs" />
+    <Compile Include="Session\SessionContext.cs" />
+    <Compile Include="Tasks\ReporterProgress.cs" />
+    <Compile Include="Tasks\ProgressableCancellable.cs" />
+    <Compile Include="Culture\Debug\Timer.cs" />
+    <Compile Include="Encryption\AsymmetricEncryption.cs" />
+    <Compile Include="Encryption\SymmetricEncryption.cs" />
+    <Compile Include="Enums\EnvEnum.cs" />
+    <Compile Include="Enums\RuntimeConfEnum.cs" />
+    <Compile Include="Extensions\Datetime.cs" />
+    <Compile Include="Extensions\Dictionary.cs" />
+    <Compile Include="Extensions\Enum.cs" />
+    <Compile Include="Extensions\Exception.cs" />
+    <Compile Include="Extensions\IEnumerable.cs" />
+    <Compile Include="Extensions\Int.cs" />
+    <Compile Include="Extensions\Object.cs" />
+    <Compile Include="Extensions\Single.cs" />
+    <Compile Include="Extensions\String.cs" />
+    <Compile Include="Extensions\Uri.cs" />
+    <Compile Include="Linq\OrderBy.cs" />
+    <Compile Include="Misc\Deployement.cs" />
+    <Compile Include="Misc\PropertyObserver.cs" />
+    <Compile Include="Misc\RuntimeConfiguration.cs" />
+    <Compile Include="Process\ProcessTools.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Thread\SleepWithStopCheck.cs" />
+    <Compile Include="Tree\TreeHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PublicKey.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Exceptions\frmExceptionMessage.resx">
+      <DependentUpon>frmExceptionMessage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

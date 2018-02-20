@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[T_E_Picture]
+(
+	[PictureId]		BIGINT NOT NULL IDENTITY (1, 1) PRIMARY KEY,
+	[Name]			NVARCHAR(40) NOT NULL,
+	[ProductId]		BIGINT NOT NULL FOREIGN KEY REFERENCES [T_E_Product],
+)

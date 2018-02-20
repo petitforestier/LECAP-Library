@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_E_Catalog">
+          <Key>
+            <PropertyRef Name="CatalogId" />
+          </Key>
+          <Property Name="CatalogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_E_Picture">
+          <Key>
+            <PropertyRef Name="PictureId" />
+          </Key>
+          <Property Name="PictureId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="ProductId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_E_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Ranking" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__T_E_Pictu__Produ__286302EC">
+          <End Role="T_E_Product" Type="Self.T_E_Product" Multiplicity="1" />
+          <End Role="T_E_Picture" Type="Self.T_E_Picture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_E_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="T_E_Picture">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EntityModelStoreContainer">
+          <EntitySet Name="T_E_Catalog" EntityType="Self.T_E_Catalog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_E_Picture" EntityType="Self.T_E_Picture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_E_Product" EntityType="Self.T_E_Product" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__T_E_Pictu__Produ__286302EC" Association="Self.FK__T_E_Pictu__Produ__286302EC">
+            <End Role="T_E_Product" EntitySet="T_E_Product" />
+            <End Role="T_E_Picture" EntitySet="T_E_Picture" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_E_Catalog">
+          <Key>
+            <PropertyRef Name="CatalogId" />
+          </Key>
+          <Property Name="CatalogId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_E_Picture">
+          <Key>
+            <PropertyRef Name="PictureId" />
+          </Key>
+          <Property Name="PictureId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="T_E_Product" Relationship="Self.FK__T_E_Pictu__Produ__286302EC" FromRole="T_E_Picture" ToRole="T_E_Product" />
+        </EntityType>
+        <EntityType Name="T_E_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ranking" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="T_E_Picture" Relationship="Self.FK__T_E_Pictu__Produ__286302EC" FromRole="T_E_Product" ToRole="T_E_Picture" />
+        </EntityType>
+        <Association Name="FK__T_E_Pictu__Produ__286302EC">
+          <End Role="T_E_Product" Type="Self.T_E_Product" Multiplicity="1" />
+          <End Role="T_E_Picture" Type="Self.T_E_Picture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_E_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="T_E_Picture">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EntityContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_E_Catalog" EntityType="Self.T_E_Catalog" />
+          <EntitySet Name="T_E_Picture" EntityType="Self.T_E_Picture" />
+          <EntitySet Name="T_E_Product" EntityType="Self.T_E_Product" />
+          <AssociationSet Name="FK__T_E_Pictu__Produ__286302EC" Association="Self.FK__T_E_Pictu__Produ__286302EC">
+            <End Role="T_E_Product" EntitySet="T_E_Product" />
+            <End Role="T_E_Picture" EntitySet="T_E_Picture" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EntityModelStoreContainer" CdmEntityContainer="EntityContext">
+          <EntitySetMapping Name="T_E_Catalog">
+            <EntityTypeMapping TypeName="EntityModel.T_E_Catalog">
+              <MappingFragment StoreEntitySet="T_E_Catalog">
+                <ScalarProperty Name="CatalogId" ColumnName="CatalogId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_E_Picture">
+            <EntityTypeMapping TypeName="EntityModel.T_E_Picture">
+              <MappingFragment StoreEntitySet="T_E_Picture">
+                <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_E_Product">
+            <EntityTypeMapping TypeName="EntityModel.T_E_Product">
+              <MappingFragment StoreEntitySet="T_E_Product">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Ranking" ColumnName="Ranking" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
