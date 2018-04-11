@@ -190,6 +190,7 @@
     <Compile Include="iTextSharpUtil\iTextSharpUtil.cs" />
     <Compile Include="Misc\DesignMode.cs" />
     <Compile Include="Misc\HotKeyManager.cs" />
+    <Compile Include="Misc\MyString.cs" />
     <Compile Include="Misc\ReplacePointByComa.cs" />
     <Compile Include="Object\KeyValue.cs" />
     <Compile Include="Tasks\NotifierProgress.cs" />

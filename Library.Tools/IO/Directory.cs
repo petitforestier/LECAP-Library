@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace Library.Tools.IO
 {
@@ -35,6 +36,61 @@ namespace Library.Tools.IO
 
             CopyAll(diSource, diTarget);
         }
+
+        /// <summary>
+        /// Comparaison de fichiers dans 2 dossiers
+        /// </summary>
+        /// <param name="sourceDirectory"></param>
+        /// <param name="targetDirectory"></param>
+        /// <returns></returns>
+        public static bool IsSameContentFolders(string iSourceDirectory, string iTargetDirectory)
+        {
+            if (!Directory.Exists(iSourceDirectory))
+                throw new Exception("Le chemin source '{0}' n'existe pas".FormatString(iSourceDirectory));
+
+            if (!Directory.Exists(iTargetDirectory))
+                throw new Exception("Le chemin cible '{0}' n'existe pas".FormatString(iTargetDirectory));
+
+            var sourceFiles = System.IO.Directory.GetFiles(iSourceDirectory, "*.*", System.IO.SearchOption.AllDirectories).Enum().ToList();
+            var targetFiles = System.IO.Directory.GetFiles(iTargetDirectory, "*.*", System.IO.SearchOption.AllDirectories).Enum().ToList();
+
+            var sourceFilesHash = new List<string>();
+            var targetFilesHash = new List<string>();
+            
+            foreach(var filePathItem in sourceFiles.Enum())
+            {
+                var fileInfo = new FileInfo(filePathItem);
+                sourceFilesHash.Add(fileInfo.Name + CalculateMD5(filePathItem));
+            }
+
+            foreach (var filePathItem in targetFiles.Enum())
+            {
+                var fileInfo = new FileInfo(filePathItem);
+                targetFilesHash.Add(fileInfo.Name + CalculateMD5(filePathItem));
+            }
+
+            var comparaisonHash = new Library.Tools.Comparator.ListComparator<string, string>(sourceFilesHash, x => x, targetFilesHash, x => x);
+
+            if (comparaisonHash.NewList.Count != 0)
+                return false;
+            if (comparaisonHash.RemovedList.Count != 0)
+                return false;
+
+            return true;
+        }
+
+        private static string CalculateMD5(string iFilePath)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(iFilePath))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+        }
+
 
         #endregion
 

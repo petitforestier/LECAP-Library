@@ -42,8 +42,6 @@ namespace Library.Text
             }
         }
 
-
-
         #endregion Public METHODS
     }
 }
