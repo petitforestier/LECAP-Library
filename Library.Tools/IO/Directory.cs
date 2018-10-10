@@ -60,13 +60,13 @@ namespace Library.Tools.IO
             foreach(var filePathItem in sourceFiles.Enum())
             {
                 var fileInfo = new FileInfo(filePathItem);
-                sourceFilesHash.Add(fileInfo.Name + CalculateMD5(filePathItem));
+                sourceFilesHash.Add(fileInfo.FullName.ReplaceStart(iSourceDirectory, "",false,false) + CalculateMD5(filePathItem));
             }
 
             foreach (var filePathItem in targetFiles.Enum())
             {
                 var fileInfo = new FileInfo(filePathItem);
-                targetFilesHash.Add(fileInfo.Name + CalculateMD5(filePathItem));
+                targetFilesHash.Add(fileInfo.FullName.ReplaceStart(iTargetDirectory, "", false, false) + CalculateMD5(filePathItem));
             }
 
             var comparaisonHash = new Library.Tools.Comparator.ListComparator<string, string>(sourceFilesHash, x => x, targetFilesHash, x => x);

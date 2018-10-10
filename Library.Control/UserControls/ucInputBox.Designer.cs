@@ -68,6 +68,7 @@
             this.txtValue.Size = new System.Drawing.Size(295, 20);
             this.txtValue.TabIndex = 5;
             this.txtValue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValue_KeyDown);
+            this.txtValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValue_KeyPress);
             // 
             // lblMessage
             // 
