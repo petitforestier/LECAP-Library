@@ -4,9 +4,6 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using Library.Tools.Extensions;
-
-using System;
-
 using System.Windows.Forms;
 
 namespace Library.Control.UserControls

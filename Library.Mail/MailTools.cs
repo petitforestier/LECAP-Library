@@ -15,11 +15,11 @@ namespace Library.Mail
     {
         #region Public CONSTRUCTORS
 
-        public MailTools(string iSMTPHost, int iSMTPPort, string iFrom)
+        public MailTools(string iSMTPHost, int iSMTPPort, string iFromEmailAdress)
         {
             SMTPHost = iSMTPHost;
             SMTPPort = iSMTPPort;
-            SMTPFrom = iFrom;
+            SMTPFrom = iFromEmailAdress;
         }
 
         #endregion
@@ -48,11 +48,19 @@ namespace Library.Mail
                 {
                     mail.From = new MailAddress(SMTPFrom);
                     foreach (var toItem in iToAddressList.Enum())
+                    {
+                        if (!IsValidEmail(toItem))
+                            throw new Exception("L'adresse '{0}' n'est pas valide".FormatString(toItem));
                         mail.To.Add(new MailAddress(toItem));
-
+                    }
+                       
                     foreach (var ccItem in iCopyAddressList.Enum())
+                    {
+                        if (!IsValidEmail(ccItem))
+                            throw new Exception("L'adresse '{0}' n'est pas valide".FormatString(ccItem));
                         mail.CC.Add(new MailAddress(ccItem));
-
+                    }
+                       
                     mail.Body = iMessage;
                     mail.Subject = iSubject;
 
@@ -74,6 +82,19 @@ namespace Library.Mail
 
                     client.Send(mail);
                 }
+            }
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
             }
         }
 

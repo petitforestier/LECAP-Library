@@ -58,7 +58,7 @@
 
             //Vérifier si la liste possède des doublons sur les clé à comparer
             if (iOriginalList.GetDuplicates(iOriginalKey, false).Count() !=0)
-                throw new Exception("La liste original possède des doublons sur la clé");
+                throw new Exception("La liste originale possède des doublons sur la clé");
 
             //Vérifier si la liste possède des doublons sur les clé à comparer
             if (iNewList.GetDuplicates(iNewKey, false).Count() != 0)
